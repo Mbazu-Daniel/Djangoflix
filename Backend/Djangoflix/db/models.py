@@ -5,5 +5,5 @@ from django.db import models
 
 class PublishStateOptions(models.TextChoices):
     # Constant = database_value, user_display value
-    PUBLISH = 'PU', "Publish"
-    DRAFT = 'DR', "Draft"
+    PUBLISH = "PU", "Publish"
+    DRAFT = "DR", "Draft"

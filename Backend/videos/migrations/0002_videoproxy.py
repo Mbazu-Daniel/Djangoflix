@@ -6,19 +6,18 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('videos', '0001_initial'),
+        ("videos", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='VideoProxy',
-            fields=[
-            ],
+            name="VideoProxy",
+            fields=[],
             options={
-                'proxy': True,
-                'indexes': [],
-                'constraints': [],
+                "proxy": True,
+                "indexes": [],
+                "constraints": [],
             },
-            bases=('videos.video',),
+            bases=("videos.video",),
         ),
     ]

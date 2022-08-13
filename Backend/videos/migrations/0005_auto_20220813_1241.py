@@ -6,42 +6,42 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('videos', '0004_video_active'),
+        ("videos", "0004_video_active"),
     ]
 
     operations = [
         migrations.DeleteModel(
-            name='VideoProxy',
+            name="VideoProxy",
         ),
         migrations.CreateModel(
-            name='VideoAllProxy',
-            fields=[
-            ],
+            name="VideoAllProxy",
+            fields=[],
             options={
-                'verbose_name': 'All Video',
-                'verbose_name_plural': 'All Videos',
-                'proxy': True,
-                'indexes': [],
-                'constraints': [],
+                "verbose_name": "All Video",
+                "verbose_name_plural": "All Videos",
+                "proxy": True,
+                "indexes": [],
+                "constraints": [],
             },
-            bases=('videos.video',),
+            bases=("videos.video",),
         ),
         migrations.CreateModel(
-            name='VideoPublishedProxy',
-            fields=[
-            ],
+            name="VideoPublishedProxy",
+            fields=[],
             options={
-                'verbose_name': 'Published Video',
-                'verbose_name_plural': 'Published Videos',
-                'proxy': True,
-                'indexes': [],
-                'constraints': [],
+                "verbose_name": "Published Video",
+                "verbose_name_plural": "Published Videos",
+                "proxy": True,
+                "indexes": [],
+                "constraints": [],
             },
-            bases=('videos.video',),
+            bases=("videos.video",),
         ),
         migrations.AddField(
-            model_name='video',
-            name='state',
-            field=models.CharField(choices=[('PU', 'Publish'), ('DR', 'Draft')], default='DR', max_length=2),
+            model_name="video",
+            name="state",
+            field=models.CharField(
+                choices=[("PU", "Publish"), ("DR", "Draft")], default="DR", max_length=2
+            ),
         ),
     ]

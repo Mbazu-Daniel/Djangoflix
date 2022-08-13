@@ -5,7 +5,7 @@ from .models import PublishStateOptions
 # Create your models here.
 
 
-def publish_state_pre_save(sender, instance, *args, **kwargs ):
+def publish_state_pre_save(sender, instance, *args, **kwargs):
     is_publish = instance.state == PublishStateOptions.PUBLISH
     is_draft = instance.state == PublishStateOptions.DRAFT
 
@@ -16,10 +16,8 @@ def publish_state_pre_save(sender, instance, *args, **kwargs ):
         instance.publish_timestamp = None
 
 
-
-def slugify_pre_save(sender, instance, *args, **kwargs ):
+def slugify_pre_save(sender, instance, *args, **kwargs):
     title = instance.title
     slug = instance.slug
     if slug is None:
         instance.slug = slugify(title)
-
