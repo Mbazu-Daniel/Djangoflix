@@ -29,7 +29,7 @@ class Video(models.Model):
             self.publish_timestamp = timezone.now()
         elif self.state == self.VideoStateOptions.DRAFT:
             self.publish_timestamp = None
-            super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
 """ This model is a proxy model to monitor our published videos"""
 class VideoAllProxy(Video):
