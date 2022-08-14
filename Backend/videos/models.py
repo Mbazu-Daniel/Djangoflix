@@ -53,7 +53,7 @@ class Video(models.Model):
 
     # getting a reversed relationship for the playlist
     def get_playlist_ids(self):
-        return list(self.playlist_set.all().values_list("id", flat=True))
+        return list(self.playlist_featured.all().values_list("id", flat=True))
 
 
 """ This model is a proxy model to monitor our published videos"""
